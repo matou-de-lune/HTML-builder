@@ -17,7 +17,7 @@ fs.rm(path.join(__dirname, 'project-dist'), { force: true, recursive: true }, (e
         if (i.isFile() && (path.extname(i.name) === '.css')) {
           fs.readFile(path.join(__dirname, 'styles', i.name), (err, data) => {
             if (err) throw err;
-            outputCss.write(`\n${data}`);
+            outputCss.write(`${data}\n`);
           });
         }
       });
